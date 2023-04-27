@@ -5,11 +5,11 @@ OPERATORS = {'+': 'PLUS', '-': 'MINUS', '*': 'STAR', '/': 'SLASH'}
 class Regex:
     @staticmethod
     def match_num(token):
-        return re.match(r'\d+', token)
+        return re.match(r'^\d+$', token)
     
     @staticmethod
     def match_op(token):
-        return re.match(r'[+\-*/]', token)
+        return re.match(r'^[-+*/]$', token)
 
 def scan(operation):
     tokens = []
